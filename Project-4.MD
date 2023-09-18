@@ -6,7 +6,7 @@ In this project, we will be see how to *use Git, Jenkins, Ansible, DockerHub, Do
 
 *Follow this project in *[Youtube](https://youtu.be/MJ74RcL6jv8)**
 
-![](https://github.com/ValaxyTech/DevOpsDemos/blob/master/SimpeDevOpsProjects/images/Project-4.png)
+![](https://github.com/Alchemy-Paul/Simple-Devops-Project/blob/main/images/Project-4.png)
 
 #### PreRequisites
 1. Jenkins - Get help [here](https://www.youtube.com/watch?v=M32O4Yv0ANc)
@@ -27,7 +27,7 @@ In *part-01* we create Docker image on ansible server through Jenkins job and pu
 1. Login to Jenkins console
 1. Create *Jenkins job*, Fill the following details,
    - *Source Code Management:*
-      - Repository : `https://github.com/ValaxyTech/hello-world.git`
+      - Repository : `https://github.com/Alchemy-Paul/hello-world `
       - Branches to build : `*/master`  
    - *Build:*
      - Root POM:`pom.xml`
@@ -46,9 +46,9 @@ In *part-01* we create Docker image on ansible server through Jenkins job and pu
        - Exec Command: 
 	      - `cd /opt/docker`
           - `docker build -t valaxy_demo .`
-	      - `docker tag valaxy_demo valaxy/valaxy_demo`
-          - `docker push valaxy/valaxy_demo`
-          - `docker rmi valaxy_demo valaxy/valaxy_demo`
+	      - `docker tag devops_demo loski1055/devops_demo`
+          - `docker push loski1055/devops_demo`
+          - `docker rmi devops_demo loski1055/dvops_demo`
               
 1. Login to Docker host and check images and containers. (no images and containers)
 
@@ -78,10 +78,10 @@ In *Part-02* we create *create_docker_container.yml* playbook. this get intiated
         - name: remove stopped container
           shell: docker rm -f valaxy_demo	  
         - name: remove docker images
-          shell: docker image rm -f valaxy/valaxy_demo
+          shell: docker image rm -f loski1055/devops_demo
           
         - name: create docker image
-          shell: docker run -d --name valaxy_demo -p 8090:8080 valaxy/valaxy_demo
+          shell: docker run -d --name devops_demo -p 8090:8080 loski1055/devops_demo
 
 1. Add this script to Jenkins job.
    - Chose *"configure"* to modify your jenkins job. 
@@ -117,7 +117,7 @@ Lets modify jenkins job which was created in *Part-01* as below.
 
 1. Create Jenkins job 
    - *Source Code Management:*
-      - Repository : `https://github.com/ValaxyTech/hello-world.git`
+      - Repository : `https://github.com/Alchemy-Paul/hello-world `
       - Branches to build : `*/master`  
    - *Build:*
      - Root POM:`pom.xml`

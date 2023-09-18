@@ -38,8 +38,8 @@ Manage Jenkins --> Configure system -->  Publish over SSH --> add Docker server 
 6. Create Jenkins job 
 
 A) Source Code Management  
- Repository : https://github.com/ValaxyTech/hello-world.git  
- Branches to build : */master  
+ Repository : https://github.com/Alchemy-Paul/hello-world  
+ Branches to build : */main  
 
 B) Build
  Root POM: pom.xml  
@@ -50,11 +50,11 @@ C) send files or execute commands over SSH
  Source files	: webapp/target/*.war  
  Remove prefix	: webapp/target  
  Remote directory	: //opt//docker  
- Exec command	: docker stop valaxy_demo; docker rm -f valaxy_demo; docker image rm -f valaxy_demo; cd /opt/docker; docker build -t valaxy_demo .  
+ Exec command	: docker stop devops_demo; docker rm -f devops_demo; docker image rm -f devops_demo; cd /opt/docker; docker build -t devops_demo .  
 
 D) send files or execute commands over SSH  
   Name: docker_host  
-  Exec command	: docker run -d --name valaxy_demo -p 8090:8080 valaxy_demo  
+  Exec command	: docker run -d --name devops_demo -p 8090:8080 devops_demo  
 
 7. Login to Docker host and check images and containers. (no images and containers)
 
